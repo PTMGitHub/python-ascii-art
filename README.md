@@ -44,3 +44,5 @@ except:
     print("Image loading didnt work")
 ```
 **Commited to GitHUB**
+
+## 2. Load your image’s pixel data into a 2-dimensional array
