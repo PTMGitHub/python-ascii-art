@@ -1,8 +1,9 @@
 from PIL import Image
 try:
-    imported_img = Image.open(./ascii-pineapple.jpg,mode='r')
+    img = Image.open("./ascii-pineapple.jpg",mode='r')
 
-    imported_img_size - impoted_img.
+    print('Succesfully loaded image!')
+    print(img.format, img.size, img.mode)
 
 except:
     print("Image loading didnt work")
