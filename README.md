@@ -22,10 +22,25 @@ try:
     img = Image.open("./ascii-pineapple.jpg",mode='r')
 
     print('Succesfully loaded image!')
-    print(img.format, img.size, img.mode)
+    print(Image img.format, img.size, img.mode)
 
 except:
     print("Image loading didnt work")
 ```
 
+**Commited to GitHUB**
+
+3. its not quite right should be printed out like this: "Image size: 640 x 480" mine is "JPEG (700, 467) RGB"
+
+### End Result
+```python
+from PIL import Image
+try:
+    img = Image.open("./ascii-pineapple.jpg",mode='r')
+
+    print('Succesfully loaded image!')
+    print("Image size: " + str(img.width) + " x " + str(img.height))
+except:
+    print("Image loading didnt work")
+```
 **Commited to GitHUB**
