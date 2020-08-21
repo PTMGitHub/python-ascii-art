@@ -46,3 +46,9 @@ except:
 **Commited to GitHUB**
 
 ## 2. Load your image’s pixel data into a 2-dimensional array
+This was the code to get the pixel info into a 2d array
+```python
+    pixels = list(img.getdata())
+    pixels = [pixels[i:i+img.width] for i in range(0, len(pixels), img.width)]
+```
+I had to look at his completed source code.  I need to unpack this so i know exactly whats going on - job for next week

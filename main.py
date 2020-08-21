@@ -5,18 +5,38 @@ try:
     print('Succesfully loaded image!')
     print("Image size: " + str(img.width) + " x " + str(img.height))
 
-    #image_px_matrix = img.load()
+    pixels = list(img.getdata())
+  #  pixels = [pixels[i * width:(i + 1) * width] for i in xrange(height)]
+    pixels = [pixels[i:i+img.width] for i in range(0, len(pixels), img.width)]
 
-    img.show()
+    print(pixels[0][0])
+    print(len(pixels))
+    # print('\n')
+    # print(img_px_matrix[0])
+    # print(img_px_matrix[0][0])
+    # print(len(img_px_matrix))
+    # print(len(img_px_matrix[0]))
+    # print('\n')
+
+    #img.show()
     
-    #print(image_px_matrix[4,4])
+    # pix_2d_list = []
     # print("Here's the image pixel info:")
-    # for i in len(image_px_matrix):
-    #     for y in len(image_px_matrix[x]):
-    #         pixel = image_px_matrix[x][y]
+    # import pdb; pdb.set_trace()
+    # for x in img_px_matrix:
+    #     pix_2d_list.append(img_px_matrix[x])
 
-    # print(*pixel, sep="\n")
+    # print(pix_2d_list)
 
+    # for x in img_px_matrix:
+    # #    print('hi')
+    #     import pdb; pdb.set_trace()
+    #     for y in len(img_px_matrix[x]):
+    #         print('hello')
+    # #         pixel = img_px_matrix[x][y]
+    # #         print(pixel)
 
+    # print(img_px_matrix)
+  
 except:
     print("Image loading didnt work")
