@@ -207,3 +207,18 @@ except:
 ```
 
  **Commited to GitHub**
+
+## 5. Print your ASCII art!
+
+So resonably easy with a for loop. 
+
+just add this ...
+
+```python
+    for y in range(len(ascii_matrix)):
+        print(*ascii_matrix[y],sep="")
+```
+
+Its works!
+
+ **Commited to GitHub**
