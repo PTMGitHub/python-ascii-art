@@ -242,3 +242,4 @@ need to add some image resizing. Added these lines
     (width,height) = (img_in.width // 2, img_in.height //2)
     img = img_in.resize((width,height))
 ```
+**commited to git - tutorial complete**
