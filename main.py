@@ -1,11 +1,14 @@
 from PIL import Image
 try:
+
     #Reads in the image and prints a message saying so and a messages printing the image size
-    #img = Image.open("./ascii-pineapple_big.jpg",mode='r')
-    #img = Image.open("./ascii-pineapple.jpg",mode='r')
-    #img = Image.open("./lion2.jpg",mode='r')
-    #img = Image.open("./me_200x267.jpg",mode='r')
-    img = Image.open("./me.jpg",mode='r')
+    #img_in = Image.open("./ascii-pineapple_big.jpg",mode='r')
+    #img_in = Image.open("./ascii-pineapple.jpg",mode='r')
+    img_in = Image.open("./lion2.jpg",mode='r')
+    #img_in = Image.open("./me_200x267.jpg",mode='r')
+    #img_in = Image.open("./me.jpg",mode='r')
+    (width,height) = (img_in.width // 2, img_in.height //2)
+    img = img_in.resize((width,height))
     print('Succesfully loaded image!')
     print("Image size: " + str(img.width) + " x " + str(img.height))
     #import pdb; pdb.set_trace()
@@ -51,15 +54,11 @@ try:
     #for loop to convert the number to one of our 70 charactors.
     for y in range(len(ascii_matrix)):
         for x in range(len(ascii_matrix[y])):
-            ascii_matrix[y][x] = ascii_char[round(ascii_matrix[y][x] / 5)]
+            ascii_matrix[y][x] = ascii_char[round(ascii_matrix[y][x] / 5)] + ascii_char[round(ascii_matrix[y][x] / 5)]
             
    
     for y in range(len(ascii_matrix)):
         print(*ascii_matrix[y],sep="")
-
-
-
-
 
 except:
     print("Image loading didnt work")

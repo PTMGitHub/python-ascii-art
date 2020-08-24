@@ -198,7 +198,7 @@ try:
     #for loop to convert the number to one of our 70 charactors.
     for y in range(len(ascii_matrix)):
         for x in range(len(ascii_matrix[y])):
-            ascii_matrix[y][x] = ascii_char[round(ascii_matrix[y][x] / 5)]
+            ascii_matrix[y][x] = ascii_char[round(ascii_matrix[y][x] / 5)] 
             
     print(ascii_matrix)
 
@@ -222,3 +222,23 @@ just add this ...
 Its works!
 
  **Commited to GitHub**
+
+ ## Problem 1 - your image looks squashed
+You’re displaying each pixel in your image using a character in your terminal. And whilst pixels are square, your terminal characters are rectangles, roughly three times as tall as they are wide. This will make your image appear squashed and narrow. The simplest way to fix this is to print each character in each row of your ASCII matrix three times, to stretch the image back out. For example, the list ['$', 'A', '#'] would be printed out as $$$AAA###.
+
+So to fix this i just changed the for loop thats converting the brightness number to a char
+
+I only doubled it because i looked better doubled not tripled lol 
+```python
+    #for loop to convert the number to one of our 70 charactors.
+    for y in range(len(ascii_matrix)):
+        for x in range(len(ascii_matrix[y])):
+            ascii_matrix[y][x] = ascii_char[round(ascii_matrix[y][x] / 5)] + ascii_char[round(ascii_matrix[y][x] / 5)] 
+```
+## Problem 2 - your ASCII matrix is too large for your screen
+
+need to add some image resizing. Added these lines
+```python
+    (width,height) = (img_in.width // 2, img_in.height //2)
+    img = img_in.resize((width,height))
+```
